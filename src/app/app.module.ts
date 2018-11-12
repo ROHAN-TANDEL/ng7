@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { ArticleListService } from './article-list/article-list.service';
+import { HttpClientModule } from '@angular/common/http';
+/*----------------implimentated for lazy loading-----------------*/
+/*import { ArticleListComponent } from './article-list/article-list.component';*/
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    /*ArticleListComponent*/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ArticleListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
