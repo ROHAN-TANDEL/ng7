@@ -1,3 +1,26 @@
-<p>
-  article-list works!
-</p>
+<div class="article-list container">
+  <table cellpadding="5px" cellspacing="5px" border="1" bgcolor="lightgreen">
+    <tbody>
+    <tr>
+      <th>User Id</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Author</th>
+      <th>Editor</th>
+      <th>Created Date</th>
+      <th>Actions</th>
+    </tr>
+    
+    <ng-container *ngFor="let items of article_array_keys" class="structure">
+        <tr *ngFor="let item of items">
+          <td><h5> {{item.id}} </h5></td>
+          <td><h5> {{item.title}} </h5></td>
+          <td><h5> {{item.body}} </h5></td>
+          <td><h5> {{item.author}} </h5></td>
+          <td><h5> {{item.editor}} </h5></td>
+          <td><h5> {{item.created_at}} </h5></td>
+        </tr>
+        </ng-container>
+    </tbody>
+</table>
+</div>

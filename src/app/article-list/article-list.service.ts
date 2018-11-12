@@ -19,10 +19,10 @@ private _headers = {
 };
   constructor(private http: HttpClient) { }
   
-	public getFullArticleList(data): Observable<any> {
+	public getFullArticleList(method, article_object) {
 		console.log('calling full article list service --- --- -- ');
 
-    return this.callArticleUrl(this.article_resource['request_type'],this.article_resource)
+    return this.callArticleUrl(method, article_object)
     .pipe(map(data => data));
 }
 
