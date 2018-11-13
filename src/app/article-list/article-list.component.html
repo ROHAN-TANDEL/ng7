@@ -1,3 +1,4 @@
+note: <h4>Use filters and pagination</h4>
 <div class="article-list container">
   <table cellpadding="5px" cellspacing="5px" border="1" bgcolor="lightgreen">
     <tbody>
@@ -11,16 +12,17 @@
       <th>Actions</th>
     </tr>
     
-    <ng-container *ngFor="let items of article_array_keys" class="structure">
-        <tr *ngFor="let item of items">
-          <td><h5> {{item.id}} </h5></td>
-          <td><h5> {{item.title}} </h5></td>
-          <td><h5> {{item.body}} </h5></td>
-          <td><h5> {{item.author}} </h5></td>
-          <td><h5> {{item.editor}} </h5></td>
-          <td><h5> {{item.created_at}} </h5></td>
+    <!-- <ng-container *ngFor="let items of article_array_keys" class="structure"> -->
+        <tr *ngFor="let item of article_array_keys">
+          <td> <input type="text" name="id" value="{{item.id}}" [disabled]="editable"> </td>
+          <td><input type="text" name="title" value="{{item.title}}"></td>
+          <td> <input type="text" name="body" value="{{item.body}}"> </td>
+          <td> <input type="text" name="author" value="{{item.author}}"> </td>
+          <td> <input type="text" name="editor" value="{{item.editor}}"></td>
+          <td> <input type="text" name="created_at" value="{{item.created_at}}"></td>
+          <td><input type="button" name="edit" value="edit" (click)="item_editable(item.id)"></td>
         </tr>
-        </ng-container>
+        <!-- </ng-container> -->
     </tbody>
 </table>
 </div>
