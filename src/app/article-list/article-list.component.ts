@@ -41,4 +41,9 @@ export class ArticleListComponent implements OnInit {
     this.article_resource['request_type'] = 'get';
     this.bindArticles(this.article_resource);
   }
+  item_delete(id) {
+    this.article_resource['id'] = id;
+    this.article_resource['request_type'] = 'delete';
+    this.bindArticles(this.article_resource);
+  }
 }
